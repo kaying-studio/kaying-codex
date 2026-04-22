@@ -60,6 +60,34 @@ Worktree 隔离执行（可选）
 
 ---
 
+## 项目截图
+
+### 首页
+![KayingCodex 首页](./codex-home.png)
+
+### 通用工作台
+![KayingCodex 通用工作台](./codex-general.png)
+
+### HarmonyOS 工作台
+![KayingCodex HarmonyOS 工作台](./codex-harmonyos.png)
+
+### Providers 配置
+![KayingCodex Providers 配置](./codex-providers.png)
+
+### 插件管理
+![KayingCodex 插件管理](./codex-plugins.png)
+
+### 会话管理
+![KayingCodex 会话管理](./codex-session.png)
+
+### 代码评审
+![KayingCodex 代码评审](./codex-review.png)
+
+### 技能管理
+![KayingCodex 技能管理](./codex-skills.png)
+
+---
+
 ## 安装
 
 从 GitHub Releases 下载适合你平台的安装包：
