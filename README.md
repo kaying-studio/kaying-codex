@@ -1,119 +1,81 @@
-# KayingCodex
+# KayingAI
 
-**面向 HarmonyOS 应用开发的 AI 驱动桌面工作台。**
-
-把通用 Coding Agent 能力，收束成真正适合 HarmonyOS 开发流程的桌面产品。
+**KayingAI builds KayingCodex, an AI desktop workbench supporting goal-based document generation, photo imitation and editing, and offline Markdown to Word/PPT/Excel/PDF conversion.**
 
 ---
 
-## 简介
+## Core Product
 
-KayingCodex 是一款桌面端 AI 开发产品，基于 OpenCode 能力构建，并针对 HarmonyOS 开发场景做了明确强化。
+### KayingCodex — AI Office Delivery Desktop Workbench
 
-它不是泛用聊天壳，也不是普通代码补全插件，而是一个围绕 **HarmonyOS 项目工作区、ArkTS / ArkUI 规则、构建部署、自动化流水线、工作树隔离、代码审查与语料沉淀** 组织起来的 AI 工作台。
+KayingCodex isn't about adding another chat box — it's about putting common office delivery tasks into one desktop workflow.
 
----
-
-## HarmonyOS 专属能力
-
-| 模块 | 说明 |
-|---|---|
-| **Harmony Scaffold** | Stage 项目创建、SDK 路径检测、模块结构校验 |
-| **ArkUI Patterns** | 布局、状态管理、导航与动画最佳实践技能 |
-| **ArkTS Rules** | 类型约束识别、编译问题诊断、禁用特性检测 |
-| **Build & Debug** | hvigorw 构建、hdc 部署、hilog 日志分析与常见错误修复 |
-| **Abilities** | UIAbility 生命周期、路由管理、权限声明与申请流程 |
-| **Pipeline** | 七阶段自动化流水线：分析 → 脚手架 → 开发 → 编译 → 修复 → 校验 → 报告 |
-
-支持 HarmonyOS NEXT API 12+、ArkTS、ArkUI、Stage Model、hvigorw、hdc、ohpm。
+- **Goal to Draft in One Step** — No more starting from a blank page. Tell it your goal — lesson plan, meeting notes, client proposal, or study schedule — and get a structured first draft you can edit.
+- **Photo Capture: Imitate, Edit, Export** — Photograph a notice, homework, spreadsheet, or client material, and let KayingCodex imitate the style, rewrite content, or organize it into a formal document.
+- **Multi-Format Delivery** — Export the same content as Word, PPT, Excel, or PDF — ideal for lesson plans, courseware, reports, spreadsheets, and fixed-layout materials.
+- **Offline Markdown to Office** — When you already have Markdown content, no AI or tokens needed — generate Office documents offline, perfect for batch formatting and formal delivery.
 
 ---
 
-## 桌面产品能力
+## Use Cases
 
-- **多项目工作区** — 独立管理多个 HarmonyOS 项目，每个工作区拥有独立会话与工具链配置
-- **Review Panel** — 文件差异可视化与评论，在接受 Agent 改动前清楚查看每一处变更
-- **Worktree 隔离** — 在隔离的 Git 工作树中执行 Agent 任务，保护主工作区，随时回滚
-- **Automations** — 定时任务与自动化规则，把高频重复操作从手动触发变为可调度执行
-- **Corpus 语料** — 从开发会话中采集有效语料，支持多格式导出，用于微调或团队知识库沉淀
-- **子 Agent 权限** — 子 Agent 权限上浮机制，可控的工程助手，不是黑盒改代码
-
----
-
-## 工程工作流
-
-```
-添加项目 / 进入工作区
-        ↓
-用自然语言描述需求
-        ↓
-Agent 结合 HarmonyOS 技能生成 / 修改代码
-        ↓
-hvigorw 构建与修复循环
-        ↓
-Review Panel 审查改动
-        ↓
-Worktree 隔离执行（可选）
-        ↓
-沉淀到 Pipeline / Corpus / Automations
-```
+| Role | Goal | Input | Output |
+|------|------|-------|--------|
+| **Elementary Teacher** | Turn course topics into lesson plans, courseware, and exercises | Type "Create a lesson plan and courseware for 3rd-grade Chinese class on Lotus" or photograph an old lesson plan | Word lesson plan, PPT courseware, class exercises, parent notices |
+| **Elementary Parent** | Turn a child's weak areas into an actionable study plan | Photograph wrong answers or type "My 4th grader keeps missing fraction word problems" | Problem explanations, practice questions, daily schedule, parent teaching outline |
+| **Government / Public Sector** | Organize scattered materials into formal documents | Paste meeting minutes, research notes, or photograph paper notices and forms | Meeting minutes, work reports, notices, research reports, finalized PDFs |
+| **Insurance Agent** | Turn client situations into clear communication materials | Enter client family structure, budget, and concerns, or photograph existing coverage | Coverage plans, product comparison tables, communication scripts, follow-up records |
+| **Admin / Training Staff** | Turn a training topic into execution materials | Enter training audience, topic, schedule, and organizational requirements | Training notices, sign-in sheets, training PPT, summary reports |
+| **Proposal Delivery** | Quickly turn Markdown proposals into deliverables | Paste an existing Markdown proposal, pricing explanation, or project summary | Offline export to Word, PPT, PDF; table content can generate Excel |
 
 ---
 
-## 项目截图
+## Photo Processing
 
-### 首页
-![KayingCodex 首页](./codex-home.png)
+Turn the format, text, and information in photos into your next deliverable material:
 
-### 通用工作台
-![KayingCodex 通用工作台](./codex-general.png)
-
-### HarmonyOS 工作台
-![KayingCodex HarmonyOS 工作台](./codex-harmonyos.png)
-
-### Providers 配置
-![KayingCodex Providers 配置](./codex-providers.png)
-
-### 插件管理
-![KayingCodex 插件管理](./codex-plugins.png)
-
-### 会话管理
-![KayingCodex 会话管理](./codex-session.png)
-
-### 代码评审
-![KayingCodex 代码评审](./codex-review.png)
-
-### 技能管理
-![KayingCodex 技能管理](./codex-skills.png)
+1. **Snap a Notice** — Imitate the original format to write a new notice, replacing dates, recipients, and items
+2. **Snap a Homework Page** — Organize knowledge points, generate explanation steps and similar practice exercises
+3. **Snap Client Materials** — Extract key information, generate follow-up records or proposal drafts
+4. **Snap a Spreadsheet** — Organize fields, add descriptions, then export as Excel or Word
 
 ---
 
-## 安装
+## Offline Conversion
 
-从 GitHub Releases 下载适合你平台的安装包：
+When content is already written, KayingCodex uses its built-in local conversion engine to generate Office files. The conversion doesn't call AI models, consumes no tokens, and works offline.
 
-**[→ 查看 Releases](https://github.com/kaying-studio/kaying-codex/releases)**
-
-| 平台 | 格式 |
-|---|---|
-| macOS | `.dmg` / `.zip` |
-| Windows | NSIS 安装包 / Portable |
-| Linux | `.AppImage` / `.deb` / `.rpm` |
-
-> 需要自行配置模型 Provider 和对应的 API Key（支持 Anthropic、OpenAI 兼容接口及本地模型）。
+- Markdown to Word
+- Markdown to PPT
+- Markdown Tables to Excel
+- Markdown to PDF
 
 ---
 
-## 免费使用
+## Workflow
 
-KayingCodex 免费提供下载与使用，持续迭代更新中。
-
----
-
-## 更多信息
-
-官网：**[https://kaying.studio](https://kaying.studio)**
+1. **State Your Goal** — "Create a parent meeting PPT", "Organize meeting minutes", "Imitate a notice from this photo"
+2. **Add Materials** — Paste text, upload photos, add Markdown, or use existing project materials as context
+3. **Generate & Refine** — Let AI produce the structure first, then continue adjusting tone, adding content, or reformatting
+4. **Preview & Export** — Preview content on the desktop app, export as Word, PPT, Excel, or PDF by scenario
 
 ---
 
-*KayingCodex 由 [KaYing Studio](https://kaying.studio) 开发与维护。*
+## Product Principles
+
+1. **Get things done first** — KayingCodex starts from goals and materials, not another complex tool to learn
+2. **Let photos keep working** — Notices, homework, forms, client materials can all become starting points for the next document
+3. **Do locally what can be done locally** — Markdown to Office uses a local conversion engine — no AI model calls, no token consumption, works offline
+4. **Be clear about boundaries** — AI creation requires model capabilities; local conversion needs no tokens
+
+---
+
+## Contact
+
+- Email: service@kayingai.com
+- Code Repository: [GitHub](https://github.com/kaying-studio/kaying-codex)
+- WeChat Support: Add customer service WeChat for 1-on-1 support
+
+---
+
+*Copyright © 2026 KayingAI. All Rights Reserved.*
