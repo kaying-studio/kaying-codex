@@ -6,6 +6,12 @@
 
 ## Core Product
 
+![DocumentFormat](./PixPin_2026-06-13_16-26-10.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-26-51.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-27-15.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-27-28.png)   
+
+
 ### KayingCodex — AI Office Delivery Desktop Workbench
 
 KayingCodex isn't about adding another chat box — it's about putting common office delivery tasks into one desktop workflow.
