@@ -6,6 +6,13 @@
 
 ## 核心产品
 
+
+![DocumentFormat](./PixPin_2026-06-13_16-26-10.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-26-51.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-27-15.png)   
+![DocumentFormat](./PixPin_2026-06-13_16-27-28.png)   
+
+
 ### KayingCodex — AI 办公交付桌面工作台
 
 KayingCodex 的价值不是多一个聊天框，而是把常见办公交付动作放进一个桌面工作流里。
