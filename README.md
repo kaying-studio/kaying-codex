@@ -67,15 +67,6 @@ When content is already written, KayingCodex uses its built-in local conversion 
 
 ---
 
-## Product Principles
-
-1. **Get things done first** — KayingCodex starts from goals and materials, not another complex tool to learn
-2. **Let photos keep working** — Notices, homework, forms, client materials can all become starting points for the next document
-3. **Do locally what can be done locally** — Markdown to Office uses a local conversion engine — no AI model calls, no token consumption, works offline
-4. **Be clear about boundaries** — AI creation requires model capabilities; local conversion needs no tokens
-
----
-
 ## Contact
 
 - Email: service@kayingai.com
