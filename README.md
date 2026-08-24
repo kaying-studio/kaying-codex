@@ -1,132 +1,136 @@
 # KayingCodex
 
-**为游戏开发打造的智能体工作台 —— 让 AI 真正把游戏做出来，而不只是写出"看起来能编译"的代码。**
+**English** | **[简体中文](README.zh-CN.md)** | **[日本語](README.ja.md)**
+
+---
+
+**An intelligent agent workbench built for game development — so AI actually ships the game, not just code that "looks like it compiles."**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> 桌面端版本：**1.5.0** · 默认工作模式：**游戏开发**
+> Desktop version: **1.5.0** · Default work mode: **Game Development**
 
 ---
 
-## 这是什么
+## What Is This
 
-KayingCodex 是一个面向游戏创作者的桌面应用。它把强大的 AI 智能体与一套"质量保障框架"结合在一起：当你说"帮我做一个横版跳跃游戏"时，它不会只改几个文件就告诉你"完成"，而是会沿着**设计 → 场景 → 玩法 → 集成 → 测试**的完整流程，一步步把东西真正做出来、做对。
+KayingCodex is a desktop application for game creators. It combines a powerful AI agent with a "quality assurance framework": when you say "build me a side-scrolling platformer," it won't just tweak a few files and declare "done." Instead, it follows the complete pipeline of **Design → Scene → Gameplay → Integration → Testing**, step by step, to actually build the thing — and build it right.
 
-普通 AI 编码工具把项目当成文本仓库，而游戏是**场景、素材、绑定、玩法逻辑**交织的图。KayingCodex 的核心区别在于：
+Ordinary AI coding tools treat projects as text repositories, but a game is a graph of interwoven **scenes, assets, bindings, and gameplay logic**. The key differences of KayingCodex:
 
-- **能编译 ≠ 能玩**：它会检查素材是否真的绑定、玩家能否真的看到画面，而不是只跑一遍类型检查。
-- **声明 ≠ 生效**：引用了一张贴图，不等于这张贴图真的被发布进了游戏。框架要求提供"证据"才认账。
-- **长任务不丢主线**：一个游戏横跨多阶段，KayingCodex 用持久化的任务进度保存每一步，关掉再打开也能从断点继续。
-- **不为"自我汇报的成功"放行**：AI 说做好了不算数，只有磁盘上确实存在可验证的证据，质量闸门才会打开。
+- **Compiles ≠ Playable**: It checks whether assets are truly bound and whether the player can actually see something on screen — not just run a type check.
+- **Declared ≠ In Effect**: Referencing a texture doesn't mean that texture was actually published into the game. The framework demands "evidence" before it accepts anything.
+- **Long Tasks Don't Lose the Thread**: A game spans multiple stages. KayingCodex persists task progress at every step, so closing and reopening picks up right where you left off.
+- **No Passing on Self-Reported Success**: When the AI says it's done, that doesn't count. Only verifiable evidence on disk opens the quality gate.
 
-简言之：**判断力交给 AI，记忆、约束和验收交给工作台。**
+In short: **Judgment goes to the AI; memory, constraints, and acceptance go to the workbench.**
 
 ---
 
-## 核心能力
+## Core Capabilities
 
-### 1. 完整的游戏开发流程
+### 1. Complete Game Development Pipeline
 
-KayingCodex 把一次游戏开发拆成清晰的阶段，并自动推进、记录、验收：
+KayingCodex breaks a game project into clear stages, automatically advancing, recording, and accepting each one:
 
 ```
-需求 → 发现 → 能力审计 → 规划 → 契约冻结
-     → 场景规划 → 场景搭建 → 场景闸门
-     → 玩法规划 → 玩法搭建 → 集成闸门
-     → 测试 → 决策 → 发布 → 完成
+Requirements → Discovery → Capability Audit → Planning → Contract Freeze
+     → Scene Planning → Scene Building → Scene Gate
+     → Gameplay Planning → Gameplay Building → Integration Gate
+     → Testing → Decision → Release → Done
 ```
 
-每一阶段都有明确的交付物和验收标准。你可以随时查看当前进度，知道"现在做到哪了、下一步该做什么"。
+Every stage has clear deliverables and acceptance criteria. You can check progress at any time and know "where we are now and what comes next."
 
-### 2. 素材真正落地
+### 2. Assets That Actually Land
 
-做游戏最容易翻车的就是"美术没绑上"。KayingCodex 内置**语义素材层**，把素材当作可评审、可发布的包来管理：从发现、导入、标注，到绑定进场景、校验、发布，每一步都有据可查。它会明确告诉你哪些素材已经真正绑定到游戏里，哪些还只是"声明了一下"。
+The easiest way to trip up in game development is "the art never got bound." KayingCodex has a built-in **semantic asset layer** that treats assets as reviewable, publishable packages: from discovery, import, and annotation to binding into scenes, validation, and publishing — every step is traceable. It tells you explicitly which assets are truly bound into the game and which were merely "declared."
 
-### 3. 角色分工的协作
+### 3. Role-Based Collaboration
 
-工作台内部由四个专业"角色"接力完成工作，各司其职：
+Inside the workbench, four specialist "roles" relay the work, each with its own responsibility:
 
-| 角色 | 负责 |
+| Role | Responsible for |
 |---|---|
-| **游戏导演** | 需求与验收标准、整体规划、关键决策 |
-| **场景搭建师** | 场景、界面、UI、素材绑定 |
-| **玩法工程师** | 玩法逻辑、模块、状态机 |
-| **质量测试** | 验收评分、把问题反馈给导演 |
+| **Game Director** | Requirements & acceptance criteria, overall planning, key decisions |
+| **Scene Builder** | Scenes, interfaces, UI, asset binding |
+| **Gameplay Engineer** | Gameplay logic, modules, state machines |
+| **Quality Tester** | Acceptance scoring, feeding issues back to the Director |
 
-工作像接力棒一样在角色之间流转，交接清楚，不会"做着做着不知道谁该负责什么"。
+Work flows between roles like a baton, with clean handoffs — no "who's supposed to own this?" mid-task confusion.
 
-### 4. 内置知识库（离线可用）
+### 4. Built-in Knowledge Base (Offline)
 
-不用让 AI 去猜引擎 API 怎么用。KayingCodex 内置一份版本化、经过验证的 API 知识库（覆盖 26 个领域、166 个操作），完全离线可用，确保生成的代码遵循确定的、正确的用法。
+No need for the AI to guess engine APIs. KayingCodex ships with a versioned, validated API knowledge base (covering 26 domains and 166 operations), fully available offline, ensuring generated code follows known, correct usage.
 
-### 5. 两种运行方式
+### 5. Two Runtime Options
 
-| | **LocalRuntime（本地运行）** | **TapTap Runtime（官方运行）** |
+| | **LocalRuntime** | **TapTap Runtime (Official)** |
 |---|---|---|
-| 是什么 | 应用自带的跨平台 Lua UI 运行器 | TapTap 官方本地运行器 |
-| 平台 | 跨平台（macOS / Windows / Linux） | 仅 Windows |
-| 用途 | 交互式设计预览、本地即时预览 | 对接 TapTap 平台构建与发布 |
+| What it is | The app's built-in cross-platform Lua UI runner | TapTap's official local runner |
+| Platforms | Cross-platform (macOS / Windows / Linux) | Windows only |
+| Use case | Interactive design preview, instant local preview | TapTap platform builds & publishing |
 
-LocalRuntime 让你在不联网、不依赖外部工具的情况下，直接在应用里看到场景的真实渲染效果。
-
----
-
-## 你能用它做什么
-
-- **从零做一个游戏**：描述你的想法，工作台会规划并逐步实现一个可玩的游戏原型。
-- **可视化设计画布**：在设计标签页里直接预览、调整场景与 UI，所见即所得。
-- **管理素材库**：导入、标注、绑定美术与音频素材，确保它们真正进入游戏。
-- **发布到 TapTap**：通过内置流程校验发布就绪状态，并提交构建。
+LocalRuntime lets you see real rendered scene output directly in the app — no internet or external tools required.
 
 ---
 
-## 快速上手
+## What Can You Do With It
 
-### 安装
-
-从发布页下载对应平台（macOS / Windows / Linux）的安装包，安装并启动即可。应用默认进入游戏开发模式。
-
-### 第一次使用
-
-1. 启动 KayingCodex，进入游戏开发工作区。
-2. 创建一个新项目，或打开已有项目。
-3. 用自然语言描述你想做的游戏（例如："做一个 2D 横版跳跃游戏，主角是方块，要能跳跃和吃金币"）。
-4. 工作台会沿着流程推进：先确认需求，再规划场景与玩法，逐步搭建并验收。
-5. 在设计画布里实时预览效果，确认无误后即可发布。
-
-### 常见入口
-
-- **设计标签页**：交互式预览本地运行时的场景与 UI。
-- **素材库**：查看、导入、绑定项目素材。
-- **发布面板**：校验发布就绪状态并提交到 TapTap。
-- **侧边栏"运行"标签**（Windows）：通过 TapTap Runtime 运行。
+- **Build a game from scratch**: Describe your idea, and the workbench will plan and progressively implement a playable prototype.
+- **Visual design canvas**: Preview and adjust scenes and UI directly in the Design tab — what you see is what you get.
+- **Manage your asset library**: Import, annotate, and bind art and audio assets, making sure they actually make it into the game.
+- **Publish to TapTap**: Validate release readiness through the built-in flow and submit your build.
 
 ---
 
-## 系统要求
+## Getting Started
 
-- **LocalRuntime（本地预览）**：macOS / Windows / Linux 均可。
-- **TapTap Runtime（官方运行 / 发布）**：需要 Windows 环境。
-- 需要可联网以下载并更新所需的运行时与素材资源。
+### Installation
+
+Download the installer for your platform (macOS / Windows / Linux) from the releases page, install, and launch. The app starts in Game Development mode by default.
+
+### First Run
+
+1. Launch KayingCodex to enter the game development workspace.
+2. Create a new project or open an existing one.
+3. Describe the game you want in natural language (e.g., "Make a 2D side-scrolling platformer where the player is a block that can jump and collect coins").
+4. The workbench advances through the pipeline: confirming requirements first, then planning scenes and gameplay, building and accepting each step.
+5. Preview results in real time on the design canvas; once satisfied, publish.
+
+### Key Entry Points
+
+- **Design tab**: Interactive preview of local-runtime scenes and UI.
+- **Asset library**: View, import, and bind project assets.
+- **Publish panel**: Validate release readiness and submit to TapTap.
+- **"Run" tab in sidebar** (Windows): Run via TapTap Runtime.
 
 ---
 
-## 常见问题
+## System Requirements
 
-**Q：这和普通的 AI 编程助手有什么不同？**
-普通助手改完文件就"宣布成功"，但游戏能不能跑、美术有没有绑上它并不验证。KayingCodex 用持久化任务流程和证据驱动的质量闸门，确保每一步都真正落地。
-
-**Q：我的项目文件存在哪里？**
-游戏项目内部的任务进度与证据保存在项目目录下的 `.project/` 中，随项目走、方便协作与备份。应用自身的配置与日志保存在用户目录下的 `~/.KayingCodex/`。
-
-**Q：需要联网吗？**
-知识库与本地预览完全离线可用。对接 TapTap 平台构建与发布时需要联网。
-
-**Q：支持哪些平台？**
-本地开发与预览跨平台；TapTap 官方运行与发布目前仅支持 Windows。
+- **LocalRuntime (local preview)**: macOS / Windows / Linux all supported.
+- **TapTap Runtime (official runs / publishing)**: Requires Windows.
+- Internet connection required to download and update runtimes and asset resources.
 
 ---
 
-## 许可证
+## FAQ
+
+**Q: How is this different from an ordinary AI coding assistant?**
+Ordinary assistants finish editing files and "declare success" without verifying whether the game runs or the art got bound. KayingCodex uses persistent task flows and evidence-driven quality gates to make sure every step actually lands.
+
+**Q: Where are my project files stored?**
+Task progress and evidence inside a game project live in `.project/` within the project directory — portable, collaboration-friendly, easy to back up. The app's own config and logs live in `~/.KayingCodex/` under your user directory.
+
+**Q: Do I need an internet connection?**
+The knowledge base and local preview are fully offline-capable. Internet is required when integrating with TapTap platform builds and publishing.
+
+**Q: Which platforms are supported?**
+Local development and preview are cross-platform; official TapTap runs and publishing currently require Windows.
+
+---
+
+## License
 
 [MIT](LICENSE) © Kaying Studio.
