@@ -12,6 +12,64 @@
 
 ---
 
+## Screenshots
+
+<table>
+<tr>
+<td width="50%">
+
+**① AI Workspace — Home**
+
+Describe your game in natural language; the workbench plans and builds a playable prototype.
+
+![AI Workspace](en/01-home.png)
+
+</td>
+<td width="50%">
+
+**② Tools Panel**
+
+One-click Favorite tools — Check Environment, Get Authorization, Initialize Project, Submit to TapTap.
+
+![Tools Panel](en/02-tools-panel.png)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**③ Live TapTap Preview**
+
+Real-time preview inside the app — the 2048 demo running in TapTap Preview on the right.
+
+![TapTap Preview](en/03-taptap-preview.png)
+
+</td>
+<td width="50%">
+
+**④ File Preview & Knowledge Base**
+
+Browse Lua source (e.g. `GameSystems.lua`) and the versioned offline API docs in one view.
+
+![File Preview](en/04-file-preview.png)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+
+**⑤ Asset Library**
+
+3101 semantically annotated items with category filters, auto-accept / manual-confirm workflow and state carousel.
+
+![Asset Library](en/05-asset-library.png)
+
+</td>
+</tr>
+</table>
+
+---
+
 ## What Is This
 
 KayingCodex is a desktop application for game creators. It combines a powerful AI agent with a "quality assurance framework": when you say "build me a side-scrolling platformer," it won't just tweak a few files and declare "done." Instead, it follows the complete pipeline of **Design → Scene → Gameplay → Integration → Testing**, step by step, to actually build the thing — and build it right.
